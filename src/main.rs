@@ -3,7 +3,7 @@ use rand::Rng;
 
 fn main() {
     App::new()
-        .add_plugins(NameErrosionFriends)
+        .add_plugins((DefaultPlugins, NameErrosionFriends))
         .run();
 }
 
@@ -35,7 +35,7 @@ impl Plugin for NameErrosionFriends {
     fn build(&self, app: &mut App) {
         app
             .add_systems(Startup, spawn_palyers)
-            .add_systems(Update, (name_errosion, name_printing).chain())
+            .add_systems(Update, (name_errosion, name_printing).chain());
     }
 }
 
