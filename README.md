@@ -1,3 +1,10 @@
+# Goals
+
+- learn ECS
+- learn Rust & Bevy
+- maybe make a game or smth idk actually
+
+
 # 4D Pong With Multiverce And Time-Travels
 
 - game of pong
