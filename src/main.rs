@@ -3,8 +3,7 @@ use rand::Rng;
 
 fn main() {
     App::new()
-        .add_systems(Startup, spawn_palyers)
-        .add_systems(Update, (name_errosion, name_printing).chain())
+        .add_plugins(NameErrosionFriends)
         .run();
 }
 
@@ -31,7 +30,14 @@ impl Name {
 }
 
 
-
+pub struct NameErrosionFriends;
+impl Plugin for NameErrosionFriends {
+    fn build(&self, app: &mut App) {
+        app
+            .add_systems(Startup, spawn_palyers)
+            .add_systems(Update, (name_errosion, name_printing).chain())
+    }
+}
 
 
 
